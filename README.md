@@ -50,6 +50,19 @@ pip install -r requirements.txt
 ```bash
 python manage.py makemigrations
 python manage.py migrate
+python manage.py initenv
+vi .env
+```
+```dotenv
+DJANGO_SECRET_KEY=<SECRET KEY>
+DJANGO_DEBUG=False
+DB_NAME=mydb
+DB_USER=postgres
+DB_PASSWORD={your password}
+DB_HOST={your db endpoint}
+DB_PORT=5432
+```
+```bash
 sudo vi /etc/systemd/system/myproject.service
 ```
 ```ini
