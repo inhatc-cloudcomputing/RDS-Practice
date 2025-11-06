@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>메모 삭제</title>
+</head>
+<body>
+    <h1>메모 삭제</h1>
+    <p>정말 "{{ note.title }}" 를 삭제할까요?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">삭제</button>
+    </form>
+    <p><a href="{% url 'note_list' %}">취소</a></p>
+</body>
+</html>
+

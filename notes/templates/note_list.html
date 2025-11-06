@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Notes</title>
+</head>
+<body>
+    <h1>Notes</h1>
+    <p><a href="{% url 'note_create' %}">새 메모</a></p>
+    <ul>
+        {% for note in notes %}
+            <li>
+                <strong>{{ note.title }}</strong>
+                ({{ note.created_at }})
+                <a href="{% url 'note_update' note.pk %}">수정</a>
+                <a href="{% url 'note_delete' note.pk %}">삭제</a>
+                <p>{{ note.content }}</p>
+            </li>
+        {% empty %}
+            <li>메모가 없습니다.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
