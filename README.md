@@ -48,6 +48,8 @@ pip install -r requirements.txt
 
 #### 서비스 생성
 ```bash
+python manage.py makemigrations
+python manage.py migrate
 sudo vi /etc/systemd/system/myproject.service
 ```
 ```ini
