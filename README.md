@@ -54,6 +54,7 @@ python manage.py initenv
 vi .env
 ```
 ```dotenv
+# /home/ubuntu/RDS-Practice/.env
 DJANGO_SECRET_KEY=<SECRET KEY>
 DJANGO_DEBUG=False
 DB_NAME=mydb
@@ -66,6 +67,7 @@ DB_PORT=5432
 sudo vi /etc/systemd/system/myproject.service
 ```
 ```ini
+# /etc/systemd/system/myproject.service
 [Unit]
 Description=Gunicorn daemon for Django project
 After=network.target
@@ -84,7 +86,7 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
-```vi
+```bash
 sudo systemctl daemon-reload
 sudo systemctl start myservice
 sudo systemctl enable myservice
@@ -95,6 +97,7 @@ sudo systemctl enable myservice
 sudo vi /etc/nginx/site-available/myproject.conf
 ```
 ```nginx
+# /etc/nginx/site-available/myproject.conf
 server {
     listen 80;
     server_name _;  # Change to EC2 Public IP
