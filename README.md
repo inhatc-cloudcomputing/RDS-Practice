@@ -48,9 +48,9 @@ pip install -r requirements.txt
 
 #### 서비스 생성
 ```bash
+python manage.py initenv
 python manage.py makemigrations
 python manage.py migrate
-python manage.py initenv
 vi .env
 ```
 ```dotenv
@@ -88,16 +88,16 @@ WantedBy=multi-user.target
 ```
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl start myservice
-sudo systemctl enable myservice
+sudo systemctl start myproject.service
+sudo systemctl enable myproject.service
 ```
 
 #### NGINX 설정
 ```bash
-sudo vi /etc/nginx/site-available/myproject.conf
+sudo vi /etc/nginx/sites-available/myproject.conf
 ```
 ```nginx
-# /etc/nginx/site-available/myproject.conf
+# /etc/nginx/sites-available/myproject.conf
 server {
     listen 80;
     server_name _;  # Change to EC2 Public IP
@@ -113,7 +113,7 @@ server {
 }
 ```
 ```bash
-sudo ln -s /etc/nginx/site-available/myproject.conf /etc/nginx/site-enabled/myproject.conf
+sudo ln -s /etc/nginx/sites-available/myproject.conf /etc/nginx/sites-enabled/myproject.conf
 sudo nginx -t
 sudo service nginx restart
 ```
