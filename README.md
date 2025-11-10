@@ -49,8 +49,6 @@ pip install -r requirements.txt
 #### 서비스 생성
 ```bash
 python manage.py initenv
-python manage.py makemigrations
-python manage.py migrate
 vi .env
 ```
 ```dotenv
@@ -62,6 +60,10 @@ DB_USER=postgres
 DB_PASSWORD={your password}
 DB_HOST={your db endpoint}
 DB_PORT=5432
+```
+```bash
+python manage.py makemigrations
+python manage.py migrate
 ```
 ```bash
 sudo vi /etc/systemd/system/myproject.service
