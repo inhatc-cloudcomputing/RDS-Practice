@@ -15,7 +15,7 @@ sudo apt install -y python3-venv postgresql-client git
 
 #### 프로젝트
 ```bash
-git clone git@github.com:inhatc-cloudcomputing/RDS-Practice.git
+git clone https://github.com/inhatc-cloudcomputing/RDS-Practice.git
 cd RDS-Practice
 python3 -m venv .venv
 source .venv/bin/activate
